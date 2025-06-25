@@ -1,4 +1,4 @@
-/* styles.css */
+/* Fuente y base */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -9,12 +9,14 @@ body {
   font-size: 1.08rem;
   line-height: 1.7;
   letter-spacing: 0.01em;
+  transition: background 0.4s, color 0.4s;
 }
 
 header {
   background: #222;
   padding: 1.5rem 0 1rem 0;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 nav ul {
@@ -47,7 +49,7 @@ section {
   background: rgba(255,255,255,0.96);
   border-radius: 18px;
   box-shadow: 0 4px 32px rgba(100,108,255,0.10);
-  transition: box-shadow 0.2s;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
 h1, h2 {
@@ -55,6 +57,7 @@ h1, h2 {
   font-family: 'Segoe UI Semibold', 'Segoe UI', sans-serif;
   letter-spacing: 1px;
   line-height: 1.2;
+  transition: color 0.3s;
 }
 h1 {
   font-size: 2.5rem;
@@ -90,7 +93,7 @@ h2 {
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
   border: none;
   font-size: 1rem;
   letter-spacing: 0.5px;
@@ -210,12 +213,75 @@ form button.btn {
   }
 }
 
-/* Scroll suave para navegación */
+/* Scroll suave */
 html {
   scroll-behavior: smooth;
 }
 
-/* Mejoras visuales para enlaces */
+/* Enlaces */
 a {
   transition: color 0.18s;
+}
+
+/* 🌙 MODO OSCURO PRO */
+body.dark-mode {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1e1e1e 100%);
+  color: #f1f1f1;
+}
+
+body.dark-mode header {
+  background: #121212;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode nav ul li a {
+  color: #f1f1f1;
+}
+body.dark-mode nav ul li a:hover {
+  background: #535bf2;
+  color: #fff;
+}
+
+body.dark-mode section {
+  background: rgba(30, 30, 30, 0.96);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+  color: #f1f1f1;
+}
+
+body.dark-mode .btn {
+  background: linear-gradient(90deg, #bb86fc 60%, #9a71ea 100%);
+  color: black;
+}
+body.dark-mode .btn:hover {
+  background: linear-gradient(90deg, #9a71ea 60%, #bb86fc 100%);
+}
+
+body.dark-mode .project-card {
+  background: #1e1e1e;
+  border-color: #3f3f3f;
+  color: #f1f1f1;
+}
+body.dark-mode .project-card:hover {
+  border-color: #bb86fc;
+  box-shadow: 0 4px 16px rgba(187, 134, 252, 0.2);
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+  background: #121212;
+  border: 1.5px solid #666;
+  color: #f1f1f1;
+}
+body.dark-mode form input:focus,
+body.dark-mode form textarea:focus {
+  background: #1e1e1e;
+  border-color: #bb86fc;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
 }
