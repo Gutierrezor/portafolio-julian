@@ -1,5 +1,19 @@
 const projects = [
   {
+    name: 'Gestión de Seguridad API',
+    description:
+      'API REST para empresas de seguridad electrónica: clientes, equipos instalados (cámaras, grabadores, alarmas, cercas), revisión automática de si cada equipo responde en la red y órdenes de servicio de los técnicos. Con pruebas automáticas y Docker.',
+    tech: 'Python, Django, Django REST Framework, PostgreSQL, Docker, GitHub Actions',
+    link: 'https://github.com/Gutierrezor/gestion-seguridad-api',
+  },
+  {
+    name: 'Monitor de Red',
+    description:
+      'Script que revisa en paralelo si las cámaras, grabadores y routers responden en su puerto, guarda un historial y avisa por Telegram cuando algo se cae. Lo uso en mi trabajo como técnico.',
+    tech: 'Python, sockets, hilos, Telegram, GitHub Actions',
+    link: 'https://github.com/Gutierrezor/monitor-red',
+  },
+  {
     name: 'LifeManager (MiHub)',
     description:
       'Aplicación full-stack para organizar notas, calendario, recordatorios, hábitos y finanzas personales desde un solo panel. Corre en mi servidor y se sincroniza entre PC, tablet y celular.',
