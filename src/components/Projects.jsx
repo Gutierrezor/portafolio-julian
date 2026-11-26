@@ -1,54 +1,57 @@
+const projects = [
+  {
+    name: 'LifeManager (MiHub)',
+    description:
+      'Aplicación full-stack para organizar notas, calendario, recordatorios, hábitos y finanzas personales desde un solo panel. Corre en mi servidor y se sincroniza entre PC, tablet y celular.',
+    tech: 'React, TypeScript, NestJS, Prisma, PostgreSQL, Docker',
+    link: 'https://github.com/Gutierrezor/life-manager-app',
+  },
+  {
+    name: 'Homelab: servidor propio',
+    description:
+      'Convertí un portátil sin uso en un servidor con Ubuntu Server. Corren en Docker Portainer, Gitea, Immich, Uptime Kuma y Homepage, con acceso remoto por Tailscale y respaldos automáticos a Google Drive.',
+    tech: 'Ubuntu Server, Docker, Tailscale, rclone, cron',
+    link: 'https://github.com/Gutierrezor/respaldo-homelab',
+  },
+  {
+    name: 'App Clima',
+    description:
+      'Aplicación de escritorio que consulta el clima de cualquier ciudad: temperatura, sensación térmica, humedad, viento y presión, con manejo de errores de conexión.',
+    tech: 'Python, Tkinter, API REST',
+    link: 'https://github.com/Gutierrezor/app_clima',
+  },
+  {
+    name: 'Generador de contraseñas',
+    description:
+      'Programa que genera contraseñas seguras eligiendo la longitud y si lleva mayúsculas, números y caracteres especiales, usando el módulo secrets de Python.',
+    tech: 'Python',
+    link: 'https://github.com/Gutierrezor/passwordGene',
+  },
+  {
+    name: 'Gestión de Turnos',
+    description:
+      'Sistema web para gestionar turnos, con inicio de sesión y exportación de datos a Excel para facilitar el trabajo administrativo.',
+    tech: 'Node.js, MySQL',
+  },
+];
+
 function Projects() {
   return (
     <section id="projects">
-      <h2>Proyectos Destacados</h2>
+      <h2>Proyectos destacados</h2>
       <div style={{ display: 'grid', gap: 24 }}>
-        <div className="project-card">
-          <h3>Gestión de Turnos</h3>
-          <p>
-            Plataforma web para la gestión eficiente de turnos, con autenticación segura y exportación de datos.
-            Permite optimizar procesos administrativos y mejorar la experiencia del usuario.
-          </p>
-          <p><strong>Tecnologías:</strong> Node.js, MySQL, Express, React</p>
-          <a
-            href="https://github.com/Gutierrezor"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            Ver en GitHub
-          </a>
-        </div>
-        <div className="project-card">
-          <h3>RecordatorioApp</h3>
-          <p>
-            Aplicación móvil desarrollada en Kotlin para Android, que permite crear, editar y gestionar recordatorios de manera intuitiva.
-          </p>
-          <p><strong>Tecnologías:</strong> Kotlin, Android Studio</p>
-           <a
-            href="https://github.com/Gutierrezor/RecordatorioApp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            Ver en GitHub
-          </a>
-        </div>
-        <div className="project-card">
-          <h3>App Clima</h3>
-          <p>
-            Aplicación web desarrollada en React que permite consultar el clima de cualquier ciudad en tiempo real utilizando una API externa.
-          </p>
-          <p><strong>Tecnologías:</strong> React, JavaScript, API REST</p>
-          <a
-            href="https://github.com/Gutierrezor/app_clima"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            Ver en GitHub
-          </a>
-        </div>
+        {projects.map((p) => (
+          <div key={p.name} className="project-card">
+            <h3>{p.name}</h3>
+            <p>{p.description}</p>
+            <p><strong>Tecnologías:</strong> {p.tech}</p>
+            {p.link && (
+              <a href={p.link} target="_blank" rel="noopener noreferrer" className="btn">
+                Ver en GitHub
+              </a>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );
